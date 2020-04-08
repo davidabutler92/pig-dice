@@ -5,23 +5,40 @@ const Player = function(name, score, playerTurn) {
   this.playerTurn = playerTurn;
 }
 
-const endTurn = () => {
-  
-}
-
-let rolled = 0;
-let roundTotal = 0;
-const roll = () => {
-  rolled = Math.floor(Math.random()*6)+1;
-  if(roundTotal !== 1) {
-    roundTotal = roundTotal + rolled;
-  } else {
-    roundTotal = 0;
-  }
+Player.prototype.addScore = () => {
+  this.score += roundTotal;
+  console.log('inside add score!');
+  console.log(roundTotal);
+  console.log("player's score", this.score);
 }
 
 let playerOne = {};
 let playerTwo = {};
+
+let rolled = 0;
+let roundTotal = 0;
+const roll = () => {
+  rolled = Math.floor(Math.random()*6) + 1;
+  console.log("dice #", rolled);
+  if(rolled !== 1) {
+    roundTotal = roundTotal + rolled;
+    console.log(roundTotal);
+  } else {
+    roundTotal = 0;
+    endTurn();
+    console.log(roundTotal);
+  }
+}
+
+const endTurn = () => {
+  if(playerOne.playerTurn === true) {
+    playerOne.playerTurn = false;
+    playerTwo.playerTurn = true;
+  } else if(playerTwo.playerTurn === true) {
+    playerTwo.playerTurn = false;
+    playerOne.playerTurn = true;
+  }
+}
 
 //UI logic
 $(document).ready(function() {
@@ -40,11 +57,22 @@ $(document).ready(function() {
     $("#player-two-score").text(playerTwo.score);
 
     $("#roll-button").click(function() {
-    
+      roll();
+      $("#total-score").text(roundTotal);
     });
+
     $("#hold-button").click(function() {
-
+      if(playerOne.playerTurn === true) {
+        playerOne.addScore();
+        $("player-one-score").text(playerOne.score);
+        endTurn();
+      } else if(playerTwo.playerTurn === true) {
+        playerTwo.addScore();
+        $("#player-two-score").text(playerTwo.score);
+        endTurn();
+      }
+      roundTotal = 0;
+    
     }); 
-
   });
 });
