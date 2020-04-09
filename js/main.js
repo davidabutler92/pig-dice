@@ -5,11 +5,9 @@ const Player = function(name, score, playerTurn) {
   this.playerTurn = playerTurn;
 }
 
-Player.prototype.addScore = () => {
+Player.prototype.addScore = function() {
   this.score += roundTotal;
   console.log('inside add score!');
-  console.log(roundTotal);
-  console.log("player's score", this.score);
 }
 
 let playerOne = {};
@@ -40,6 +38,18 @@ const endTurn = () => {
   }
 }
 
+const winner = () => {
+  if(playerOne.score >= 100) {
+    alert(playerOne.name + " " + "is the winner!");
+    $("#hold-button").prop("disabled", true);
+    $("#roll-button").prop("disabled", true);
+  } else if(playerTwo.score >= 100) {
+    alert(playerTwo.name + " " + "is the winner!");
+    $("#hold-button").prop("disabled", true);
+    $("#roll-button").prop("disabled", true);
+  }
+}
+
 //UI logic
 $(document).ready(function() {
   $("#player-sign-in-form").submit(function(event) {
@@ -64,11 +74,13 @@ $(document).ready(function() {
     $("#hold-button").click(function() {
       if(playerOne.playerTurn === true) {
         playerOne.addScore();
-        $("player-one-score").text(playerOne.score);
+        $("#player-one-score").text(playerOne.score);
+        winner();
         endTurn();
       } else if(playerTwo.playerTurn === true) {
         playerTwo.addScore();
         $("#player-two-score").text(playerTwo.score);
+        winner();
         endTurn();
       }
       roundTotal = 0;
