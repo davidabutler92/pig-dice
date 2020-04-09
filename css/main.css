@@ -1,3 +1,31 @@
+h1 {
+  text-align: center;
+}
+
 #pig-dice {
   display: none;
+}
+
+#alert {
+  display: none;
+}
+
+#player-one-checkmark-image {
+  height: 20px;
+  width: 20px;
+}
+
+#player-two-checkmark-image {
+  height: 20px;
+  width: 20px;
+  display: none;
+}
+
+#alert {
+  width: 320px;
+}
+
+#flex-css {
+  display: flex;
+  justify-content: space-around;
 }

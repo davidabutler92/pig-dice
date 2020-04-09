@@ -18,13 +18,19 @@ let roundTotal = 0;
 const roll = () => {
   rolled = Math.floor(Math.random()*6) + 1;
   console.log("dice #", rolled);
+  $("#alert").hide();
   if(rolled !== 1) {
     roundTotal = roundTotal + rolled;
     console.log(roundTotal);
   } else {
     roundTotal = 0;
+    // if(playerOne.playerTurn === true) {
+    //   alert("oops! " + playerOne.name + ", " + "you rolled a one. It's " + playerTwo.name + "'s " + "turn")
+    // } else if(playerTwo.playerTurn === true) {
+    //   alert("oops! " + playerTwo.name + ", " + "you rolled a one. It's " + playerOne.name + "'s " + "turn")
+    // }
+    $("#alert").show();
     endTurn();
-    console.log(roundTotal);
   }
 }
 
@@ -32,22 +38,32 @@ const endTurn = () => {
   if(playerOne.playerTurn === true) {
     playerOne.playerTurn = false;
     playerTwo.playerTurn = true;
+    $("#player-one-checkmark-image").hide();
+    $("#player-two-checkmark-image").show();
   } else if(playerTwo.playerTurn === true) {
     playerTwo.playerTurn = false;
     playerOne.playerTurn = true;
+    $("#player-two-checkmark-image").hide();
+    $("#player-one-checkmark-image").show();
   }
 }
 
 const winner = () => {
-  if(playerOne.score >= 100) {
+  if(playerOne.score >= 20) {
     alert(playerOne.name + " " + "is the winner!");
     $("#hold-button").prop("disabled", true);
     $("#roll-button").prop("disabled", true);
-  } else if(playerTwo.score >= 100) {
+    $("#play-again-button").show();
+  } else if(playerTwo.score >= 20) {
     alert(playerTwo.name + " " + "is the winner!");
     $("#hold-button").prop("disabled", true);
     $("#roll-button").prop("disabled", true);
+    $("#play-again-button").show();
   }
+}
+
+const reload = () => {
+  location.reload();
 }
 
 //UI logic
@@ -65,6 +81,7 @@ $(document).ready(function() {
     $("#player-one-score").text(playerOne.score);
     $("#player-two-name").text(playerTwo.name);
     $("#player-two-score").text(playerTwo.score);
+    $("#play-again-button").hide();
 
     $("#roll-button").click(function() {
       roll();
@@ -84,7 +101,11 @@ $(document).ready(function() {
         endTurn();
       }
       roundTotal = 0;
-    
+      $("#total-score").text(roundTotal);
     }); 
+
+    $("#play-again-button").click(function() {
+      reload();
+    });
   });
 });

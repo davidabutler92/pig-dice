@@ -12,30 +12,39 @@
       <form id="player-sign-in-form">
         <div class="form-group">
           <label for="player1">Player 1:</label>
-          <input type="text" id="player1" name="player1" placeholder="Enter Name..">
+          <input type="text" id="player1" name="player1" placeholder="Enter Name.." required>
         </div>
         <div class="form-group">
           <label for="player2">Player 2:</label>
-          <input type="text" id="player2" name="player2" placeholder="Enter Name..">
+          <input type="text" id="player2" name="player2" placeholder="Enter Name.." required>
         </div>
         <button type="submit">Submit</button>
       </form>
     </section>
     <section id="pig-dice">
       <h1>Pig Dice</h1>
-      <div>
-        <p id="player-one-name"></p>
-        <p id="player-one-score"></p>
+      <div id="flex-css">
+        <div>
+          <span id="player-one-name"></span>
+          <img id="player-one-checkmark-image" src="https://pluspng.com/img-png/green-tick-png-green-tick-png-file-570.png" alt="checkmark">
+          <p id="player-one-score"></p>
+        </div>
+        <div>
+          <p>Total Score:</p>
+          <p id="total-score">0</p>
+          <button id="roll-button">Roll</button>
+          <button id="hold-button">Hold</button>
+        </div>
+        <div>
+          <span id="player-two-name"></span>
+          <img  id="player-two-checkmark-image" src="https://pluspng.com/img-png/green-tick-png-green-tick-png-file-570.png" alt="checkmark">
+          <p id="player-two-score"></p>
+        </div>
       </div>
-      <div>
-        <p>Total Score:</p>
-        <p id="total-score">0</p>
-        <button id="roll-button">Roll</button>
-        <button id="hold-button">Hold</button>
-      </div>
-      <div>
-        <p id="player-two-name"></p>
-        <p id="player-two-score"></p>
+      <button type="button" id="play-again-button">Play Again</button>
+      <br>
+      <div class="alert alert-danger" role="alert" id="alert">
+        <p>Oh snap! You rolled a one, next player's turn!</p>
       </div>
     </section>
   </body>
