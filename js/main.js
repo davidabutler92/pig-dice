@@ -49,12 +49,12 @@ const endTurn = () => {
 }
 
 const winner = () => {
-  if(playerOne.score >= 20) {
+  if(playerOne.score >= 100) {
     alert(playerOne.name + " " + "is the winner!");
     $("#hold-button").prop("disabled", true);
     $("#roll-button").prop("disabled", true);
     $("#play-again-button").show();
-  } else if(playerTwo.score >= 20) {
+  } else if(playerTwo.score >= 100) {
     alert(playerTwo.name + " " + "is the winner!");
     $("#hold-button").prop("disabled", true);
     $("#roll-button").prop("disabled", true);
@@ -82,7 +82,7 @@ $(document).ready(function() {
     $("#player-two-name").text(playerTwo.name);
     $("#player-two-score").text(playerTwo.score);
     $("#play-again-button").hide();
-
+    $("#jumbotron1").hide();
     $("#roll-button").click(function() {
       roll();
       $("#total-score").text(roundTotal);

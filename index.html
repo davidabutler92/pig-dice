@@ -8,30 +8,45 @@
     <title>PIGDICE</title>
   </head>
   <body>
-    <section id="sign-in">
-      <form id="player-sign-in-form">
-        <div class="form-group">
-          <label for="player1">Player 1:</label>
-          <input type="text" id="player1" name="player1" placeholder="Enter Name.." required>
-        </div>
-        <div class="form-group">
-          <label for="player2">Player 2:</label>
-          <input type="text" id="player2" name="player2" placeholder="Enter Name.." required>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
+    <div class="container" id="header1">
+      <div class="jumbotron" id="jumbotron1">
+        <h2>Enter name to play:</h2>
+      </div>
+    </div>
+    <br>
+    <div class="container container-center">
+      <section id="sign-in">
+        <form id="player-sign-in-form">
+          <div class="form-group">
+            <label for="player1">Player 1:</label>
+            <input type="text" id="player1" name="player1" placeholder="Enter Name.." required>
+          </div>
+          <div class="form-group">
+            <label for="player2">Player 2:</label>
+            <input type="text" id="player2" name="player2" placeholder="Enter Name.." required>
+          </div>
+          <button type="submit" id="submit-button">Submit</button>
+        </form>
+      </section>
+    </div>
+
     <section id="pig-dice">
-      <h1>Pig Dice</h1>
-      <div id="flex-css">
+      <div class="container" id="header2">
+        <div class="jumbotron" id="jumbotron2">
+          <h1>Pig Dice</h1>
+        </div>
+      </div>
+      <br>
+      <div id="flex-css">        
         <div>
           <span id="player-one-name"></span>
           <img id="player-one-checkmark-image" src="https://pluspng.com/img-png/green-tick-png-green-tick-png-file-570.png" alt="checkmark">
           <p id="player-one-score"></p>
         </div>
         <div>
-          <p>Total Score:</p>
-          <p id="total-score">0</p>
+          <span>Total Score: </span>
+          <span id="total-score">0</span>
+          <br>
           <button id="roll-button">Roll</button>
           <button id="hold-button">Hold</button>
         </div>

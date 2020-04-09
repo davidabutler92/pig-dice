@@ -22,10 +22,62 @@ h1 {
 }
 
 #alert {
+  margin: auto;
   width: 320px;
 }
 
 #flex-css {
   display: flex;
   justify-content: space-around;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+#jumbotron2{
+  background-color: pink;
+  color: white;
+  text-align: center;
+  padding:20px;
+}
+
+#jumbotron1{
+  background-color: pink;
+  color: white;
+  text-align: center;
+  padding:20px;
+  width: 50%
+}
+
+#header1 {
+  margin-top: 50px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+    background-image: url("https://bit.ly/3c5hcgX");
+    height: auto; 
+    background-size: cover;
+}
+
+#player-sign-in-form {
+  display: flex;  
+  flex-direction: column;
+}
+
+button {
+  transition-duration: 0.4s;
+  border-radius: 8px;
+  border: 4px solid pink;
+}
+
+button:hover {
+  background-color: pink;
+  color: white;
 }
