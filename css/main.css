@@ -1,8 +1,10 @@
 h1 {
   text-align: center;
+  margin: 0px;
 }
 
 #pig-dice {
+  text-align: center;
   display: none;
 }
 
@@ -11,24 +13,21 @@ h1 {
 }
 
 #player-one-checkmark-image {
-  height: 20px;
-  width: 20px;
+  height: 40px;
+  width: 40px;
 }
 
 #player-two-checkmark-image {
-  height: 20px;
-  width: 20px;
+  height: 40px;
+  width: 40px;
   display: none;
 }
 
-#alert {
-  margin: auto;
-  width: 320px;
-}
 
 #flex-css {
   display: flex;
   justify-content: space-around;
+  font-size: 20px;
 }
 
 .container {
@@ -41,6 +40,8 @@ h1 {
   color: white;
   text-align: center;
   padding:20px;
+  border: 4px solid white;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #jumbotron1{
@@ -48,7 +49,9 @@ h1 {
   color: white;
   text-align: center;
   padding:20px;
-  width: 50%
+  width: 50%;
+  border: 4px solid white;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #header1 {
@@ -61,23 +64,98 @@ h2 {
 }
 
 body {
-    background-image: url("https://bit.ly/3c5hcgX");
-    height: auto; 
-    background-size: cover;
+  background-image: url("https://bit.ly/3c5hcgX");
+  height: auto; 
+  background-size: cover;
 }
 
 #player-sign-in-form {
   display: flex;  
   flex-direction: column;
+  font-size: large;
+  
 }
 
 button {
   transition-duration: 0.4s;
   border-radius: 8px;
   border: 4px solid pink;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 button:hover {
   background-color: pink;
   color: white;
+}
+
+.form-group {
+  padding: 10px;
+  
+}
+
+#submit-button {
+  margin-top: 10px;
+}
+
+input {
+  border: 4px solid pink;
+  border-radius: 8px;
+}
+
+label {
+  color: white;
+}
+
+.score-box {
+  text-align: center;
+  border: 4px solid white;
+  background-color: pink;
+  border-radius: 8px;
+  width: 200px;
+  height: 200px;
+  padding: 50px;
+  margin: auto;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#total-score-box {
+  width: 200px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#winning-alert-div {
+  display: none; 
+  margin: 0px;
+  position: absolute;
+  top: 75%;
+  left: 38%;
+  width: 320px;
+  height: 100px;
+  background-color: pink;
+  color: white;
+  border: 4px solid white;
+}
+
+#alert {
+  margin: 0px;
+  position: absolute;
+  top: 75%;
+  left: 38%;
+  width: 320px;
+  height: 100px;
+  background-color: pink;
+  color: white;
+  border: 4px solid white;
+}
+
+#win-alert {
+  margin-top: 4%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#roll-one-alert {
+  font-size: 20px;
+  font-weight: bold;
 }

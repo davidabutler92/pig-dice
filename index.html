@@ -5,7 +5,7 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/main.js"></script>
-    <title>PIGDICE</title>
+    <title>Pig-Dice</title>
   </head>
   <body>
     <div class="container" id="header1">
@@ -14,7 +14,7 @@
       </div>
     </div>
     <br>
-    <div class="container container-center">
+    <div class="container container-center" id="sign-in-container">
       <section id="sign-in">
         <form id="player-sign-in-form">
           <div class="form-group">
@@ -38,28 +38,35 @@
       </div>
       <br>
       <div id="flex-css">        
-        <div>
-          <span id="player-one-name"></span>
+        <div class="score-box">
+          <div class="player-score">
+            <span id="player-one-name"></span>
+            <p id="player-one-score"></p>
+          </div>
           <img id="player-one-checkmark-image" src="https://pluspng.com/img-png/green-tick-png-green-tick-png-file-570.png" alt="checkmark">
-          <p id="player-one-score"></p>
         </div>
-        <div>
+        <div id="total-score-box">
           <span>Total Score: </span>
           <span id="total-score">0</span>
           <br>
           <button id="roll-button">Roll</button>
           <button id="hold-button">Hold</button>
         </div>
-        <div>
-          <span id="player-two-name"></span>
+        <div class="score-box">
+          <div class="player-score">
+            <span id="player-two-name"></span>
+            <p id="player-two-score"></p>
+          </div>
           <img  id="player-two-checkmark-image" src="https://pluspng.com/img-png/green-tick-png-green-tick-png-file-570.png" alt="checkmark">
-          <p id="player-two-score"></p>
         </div>
       </div>
       <button type="button" id="play-again-button">Play Again</button>
       <br>
       <div class="alert alert-danger" role="alert" id="alert">
-        <p>Oh snap! You rolled a one, next player's turn!</p>
+        <p id="roll-one-alert">Oh snap! You rolled a one, next player's turn!</p>
+      </div>
+      <div class="alert alert-danger" role="alert" id="winning-alert-div">
+        <p id="win-alert"></p>
       </div>
     </section>
   </body>

@@ -24,11 +24,6 @@ const roll = () => {
     console.log(roundTotal);
   } else {
     roundTotal = 0;
-    // if(playerOne.playerTurn === true) {
-    //   alert("oops! " + playerOne.name + ", " + "you rolled a one. It's " + playerTwo.name + "'s " + "turn")
-    // } else if(playerTwo.playerTurn === true) {
-    //   alert("oops! " + playerTwo.name + ", " + "you rolled a one. It's " + playerOne.name + "'s " + "turn")
-    // }
     $("#alert").show();
     endTurn();
   }
@@ -49,16 +44,20 @@ const endTurn = () => {
 }
 
 const winner = () => {
-  if(playerOne.score >= 100) {
-    alert(playerOne.name + " " + "is the winner!");
+  if(playerOne.score >= 20) {
+    // alert(playerOne.name + " " + "is the winner!");
     $("#hold-button").prop("disabled", true);
     $("#roll-button").prop("disabled", true);
     $("#play-again-button").show();
-  } else if(playerTwo.score >= 100) {
-    alert(playerTwo.name + " " + "is the winner!");
+    $("#win-alert").text("Congrats! " + playerOne.name + ", you won!")
+    $("#winning-alert-div").show();
+  } else if(playerTwo.score >= 20) {
+    // alert(playerTwo.name + " " + "is the winner!");
     $("#hold-button").prop("disabled", true);
     $("#roll-button").prop("disabled", true);
     $("#play-again-button").show();
+    $("#win-alert").text("Congrats! " + playerTwo.name + ", you won!")
+    $("#winning-alert-div").show();
   }
 }
 
