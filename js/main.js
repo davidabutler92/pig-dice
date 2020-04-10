@@ -17,8 +17,9 @@ let rolled = 0;
 let roundTotal = 0;
 const roll = () => {
   rolled = Math.floor(Math.random()*6) + 1;
-  console.log("dice #", rolled);
+  // console.log("dice #", rolled);
   $("#alert").hide();
+  $(".dice-img").prepend("<img id='new-dice' src='images/dice"+rolled+".png' alt='Dice "+rolled+"'>");
   if(rolled !== 1) {
     roundTotal = roundTotal + rolled;
     console.log(roundTotal);
