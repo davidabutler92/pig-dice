@@ -45,14 +45,14 @@ const endTurn = () => {
 }
 
 const winner = () => {
-  if(playerOne.score >= 100) {
+  if(playerOne.score >= 80) {
     // alert(playerOne.name + " " + "is the winner!");
     $("#hold-button").prop("disabled", true);
     $("#roll-button").prop("disabled", true);
     $("#play-again-button").show();
     $("#win-alert").text("Congrats! " + playerOne.name + ", you won!")
     $("#winning-alert-div").show();
-  } else if(playerTwo.score >= 100) {
+  } else if(playerTwo.score >= 80) {
     // alert(playerTwo.name + " " + "is the winner!");
     $("#hold-button").prop("disabled", true);
     $("#roll-button").prop("disabled", true);
