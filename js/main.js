@@ -1,6 +1,6 @@
 //Business Logic 
 const Player = function(name, score, playerTurn) {
-  this.name = name;
+  this.name = name;a
   this.score = score;
   this.playerTurn = playerTurn;
 }
